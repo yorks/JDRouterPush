@@ -305,6 +305,7 @@ def push(title,content):
     NoticePush.telegram_bot(title, normalContent)
     NoticePush.bark(title, normalContent)
     NoticePush.enterprise_wechat(title, normalContent)
+    NoticePush.wecom_bot_webhook(title, normalContent)
 
 
     # 信息输出测试

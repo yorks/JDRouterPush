@@ -3,6 +3,22 @@ import json
 import GlobalVariable
 import markdown
 
+# 企业微信 群机器人 提醒
+def wecom_bot_webhook(title, content):
+    if not GlobalVariable.WECOM_BOT_WEBHOOK:
+        print("企业微信群推送的WECOM_WEBHOOK未设置!!")
+        return
+    message = {
+        "msgtype": "text",
+        "text": {"content": f"{title}\n{content}"},
+    }
+    resp = requests.post(GlobalVariable.WECOM_BOT_WEBHOOK, data=json.dumps(message))
+    if resp.ok:
+        print("✅ WeCom notified")
+    else:
+        print("Fail to notify WeCom")
+
+
 # Server酱推送
 def server_push(text, desp):
     if not GlobalVariable.SERVERPUSHKEY:

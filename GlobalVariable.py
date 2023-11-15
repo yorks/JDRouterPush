@@ -76,6 +76,7 @@ AGENTID = os.environ.get("AGENTID", "")  # agentid企业应用的id
 THUMB_MEDIA_ID = os.environ.get("THUMB_MEDIA_ID", "") #企业微信素材库图片id
 AUTHOR = os.environ.get("AUTHOR", "") #企业微信文章作者
 NETWORK_SEGMENT = os.environ.get("NETWORK_SEGMENT", "") #网段格式：123OFO:100.108.*>48.*>8
+WECOM_BOT_WEBHOOK = os.environ.get("WECOM_BOT_WEBHOOK", "") # 企业微信 群机器人 webhook 提醒
 
 # 查找mac位置
 def findALocation(mac):
